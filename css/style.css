@@ -1,0 +1,188 @@
+* {
+    font-family: "Roboto", sans-serif;
+    ;
+}
+
+.error-msg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.055);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    color: white;
+
+
+}
+
+.fa-spinner {
+    font-size: 100px;
+}
+
+.loading-msg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.055);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    color: white;
+
+
+}
+
+
+
+p {
+    margin: 0;
+}
+
+.frist-d {
+    top: -29px;
+    position: relative;
+    font-size: 20px;
+}
+
+.second-d {
+    top: -17px;
+    position: relative;
+    font-size: 15px;
+}
+
+.therd-d {
+    top: -10px;
+    position: relative;
+    font-size: 15px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.temp-1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.temp-max {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.temp-min {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.head-text {
+    text-align: center;
+    font-size: 65px;
+    color: white;
+}
+
+.main-morning {
+    width: 100%;
+    height: 100%vh;
+    background-image: url(../image/morning.jpg);
+    background-position: center center;
+    background-size: cover;
+    animation: morning;
+    animation-duration: 5s;
+    transition: all 1s linear;
+}
+
+.msg {
+    position: absolute;
+    width: 50px;
+    height: 15px;
+    background-color: black;
+}
+
+.main-night {
+    width: 100%;
+    height: 100%vh;
+    background-image: url(../image/night.jpeg.jpg);
+    background-position: center center;
+    background-size: cover;
+    animation: night;
+    animation-duration: 5s;
+    transition: all 1s linear;
+}
+
+@keyframes night {
+    from {
+        background-image: url(../image/morning.jpg);
+    }
+
+    to {
+        background-image: url(../image/night.jpeg.jpg);
+
+    }
+}
+
+@keyframes morning {
+    from {
+        background-image: url(../image/night.jpeg.jpg);
+    }
+
+    to {
+        background-image: url(../image/morning.jpg);
+    }
+}
+
+
+.container {
+    height: auto;
+}
+
+.card {
+    height: 300px;
+    background: rgba(255, 255, 255, 0.055);
+    transform: translatey(0%);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    opacity: 1;
+    animation: animation;
+    animation-duration: 2s;
+    transition: all 1s;
+
+}
+
+.card:hover {
+    scale: 1.05;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: white;
+    outline: 0;
+    box-shadow: 0 0 0 .1rem white;
+}
+
+@keyframes animation {
+    0% {
+        transform: translatey(100%);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translatey(-5%);
+
+    }
+
+    100% {
+        transform: translatey(0%);
+        opacity: 1;
+    }
+}

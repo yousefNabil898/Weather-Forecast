@@ -1,0 +1,45 @@
+/* small devices */
+@media (min-width:640px) {
+.row{
+    padding: 90px;
+}
+}
+
+/* medium devices */
+
+@media (min-width:768px) {
+
+.head-text {
+    font-size: 100px;
+}
+.main-night{
+    height: 120vh;
+}
+.main-morning{
+    height: 120vh;
+}
+
+}
+@media (min-width:800px) {
+  
+}
+
+
+/* large devices */
+
+@media (min-width:1023px) {
+    .main-night{
+        height: 100vh;
+    }
+    .main-morning{
+        height: 100vh;
+    }
+}
+
+/* extra-large devices */
+
+@media (min-width:1280px) {}
+
+/* extra-extra large devices */
+
+@media (min-width:1536px) {}
