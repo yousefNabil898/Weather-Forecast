@@ -12,10 +12,11 @@ async function getData(location) {
     try {
         allDays = []
         if (typeof location === "string") {
-            location = city
-            var api = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=cfca9519249943bca9f195258241606&q=${city}&days=3`)
+            city = location 
+            api = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=cfca9519249943bca9f195258241606&q=${city}&days=3`);
         } else {
-            var api = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=cfca9519249943bca9f195258241606&q=${latitude},${longitude}&days=3`)
+            const { latitude, longitude } = location.coords;
+            api = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=cfca9519249943bca9f195258241606&q=${latitude},${longitude}&days=3`);
         }
         load.classList.add('d-none')
         var data = await api.json()
@@ -136,17 +137,13 @@ function display() {
 
     document.querySelector('.row').innerHTML = cartona
 }
+
 if (city === undefined) {
     city = "cairo"
     getData(city)
 }
 if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (postion) {
-        longitude = postion.coords.longitude
-        latitude = postion.coords.latitude
-        getData(latitude, longitude)
-
-    })
+    navigator.geolocation.getCurrentPosition(getData);
 }
 input.addEventListener('input', function () {
 
